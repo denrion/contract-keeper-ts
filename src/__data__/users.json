@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "5e5fee92fb6d94630827c4aa",
+    "firstName": "Admin",
+    "lastName": "Account",
+    "email": "admin@gmail.com",
+    "role": "admin",
+    "password": "test1234"
+  },
+  {
+    "_id": "5e5fee92fb6d94630827c4ab",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@gmail.com",
+    "role": "user",
+    "password": "test1234"
+  },
+  {
+    "_id": "5e5fee92fb6d94630827c4ac",
+    "firstName": "Kevin",
+    "lastName": "Smith",
+    "email": "kevin@gmail.com",
+    "role": "user",
+    "password": "test1234"
+  },
+  {
+    "_id": "5e5fee92fb6d94630827c4ad",
+    "firstName": "Sasha",
+    "lastName": "Ryan",
+    "email": "sasha@gmail.com",
+    "role": "user",
+    "password": "test1234"
+  },
+  {
+    "_id": "5e5fee92fb6d94630827c4ae",
+    "firstName": "Mary",
+    "lastName": "Williams",
+    "email": "mary@gmail.com",
+    "role": "user",
+    "password": "test1234"
+  }
+]
