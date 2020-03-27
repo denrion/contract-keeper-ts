@@ -20,7 +20,7 @@ export enum Role {
 }
 
 // ************************ SCHEMA ************************ //
-const UserSchema = createSchema(
+export const UserSchema = createSchema(
   {
     firstName: Type.string({
       required: true,

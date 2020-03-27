@@ -14,6 +14,7 @@ import {
 } from './config/constants';
 import globalErrorHandler from './controllers/errorController';
 import { authRouter } from './routes/authRoutes';
+import { contactRouter } from './routes/contactRoutes';
 import { userRouter } from './routes/userRoutes';
 import NotImplementedError from './utils/errors/NotImplementedError';
 
@@ -63,6 +64,7 @@ app.use(cors());
 // 2) ROUTES
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/contacts', contactRouter);
 
 app.all('*', (req, res, next) => {
   next(

@@ -9,7 +9,7 @@ import lowercaseFirstLetter from '../utils/helpers/lowercaseFirstLetter';
 
 export const getAll = (Model: Model<any>) =>
   catchAsync(async (req, res, next) => {
-    const features = new APIFeatures(Model.find(), req.query)
+    const features = new APIFeatures(Model.find(req.conditions), req.query)
       .filter()
       .sort()
       .limitFields()
@@ -21,7 +21,7 @@ export const getAll = (Model: Model<any>) =>
       status: ResponseStatus.SUCCESS,
       results: documents.length,
       pagination: features.createPaginationLinks(await Model.countDocuments()),
-      data: { [`${lowercaseFirstLetter(Model.modelName)}s`]: documents }
+      data: { [`${lowercaseFirstLetter(Model.modelName)}s`]: documents },
     });
   });
 
@@ -41,7 +41,7 @@ export const getOne = (
 
     res.status(status.OK).json({
       status: ResponseStatus.SUCCESS,
-      data: { [lowercaseFirstLetter(Model.modelName)]: document }
+      data: { [lowercaseFirstLetter(Model.modelName)]: document },
     });
   });
 
@@ -58,7 +58,7 @@ export const createOne = (Model: Model<any>) =>
 
     res.status(status.CREATED).json({
       status: ResponseStatus.SUCCESS,
-      data: { [lowercaseFirstLetter(Model.modelName)]: document }
+      data: { [lowercaseFirstLetter(Model.modelName)]: document },
     });
   });
 
@@ -66,7 +66,7 @@ export const updateOne = (Model: Model<any>) =>
   catchAsync(async (req, res, next) => {
     const document = await Model.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
-      runValidators: true
+      runValidators: true,
     });
 
     if (!document)
@@ -74,7 +74,7 @@ export const updateOne = (Model: Model<any>) =>
 
     res.status(status.OK).json({
       status: ResponseStatus.SUCCESS,
-      data: { [lowercaseFirstLetter(Model.modelName)]: document }
+      data: { [lowercaseFirstLetter(Model.modelName)]: document },
     });
   });
 
